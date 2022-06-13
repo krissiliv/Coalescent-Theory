@@ -75,8 +75,8 @@ def give_coal_timeIM(m, d, N, num_replicates):
         samples[i] = 1 
     values_per_tree = (2*d)*(2*d-1)/2 
     tmrca = np.zeros(num_replicates) 
-    demographyIM = msprime.Demography.island_model([N]*d, migration_rate=m/(d-1))  # Symmetrisches, konservatives d-Insel Modell mit N diploide pro Insel (Deme)
-    replicates = msprime.sim_ancestry(samples=samples, num_replicates=num_replicates, demography=demographyIM, random_seed=1)  # Simulation der Daten
+    demographyIM = msprime.Demography.island_model([N]*d, migration_rate=m/(d-1)) 
+    replicates = msprime.sim_ancestry(samples=samples, num_replicates=num_replicates, demography=demographyIM, random_seed=1)  
     for replicate_index, ts in enumerate(replicates):
         tree = ts.first()  
         acc_within = 0.  
@@ -98,7 +98,7 @@ def give_coal_timeSTST(m, d, N, num_replicates):
     values_per_tree = (2*d)*(2*d-1)/2 
     tmrca = np.zeros(num_replicates)
     demographyIM = msprime.Demography.stepping_stone_model([N]*d, migration_rate=m/2, boundaries=False)
-    replicates = msprime.sim_ancestry(samples=samples, num_replicates=num_replicates, demography=demographyIM, random_seed=1)  # Simulation der Daten
+    replicates = msprime.sim_ancestry(samples=samples, num_replicates=num_replicates, demography=demographyIM, random_seed=1) 
     for replicate_index, ts in enumerate(replicates):
         tree = ts.first()  
         acc_within = 0.  
