@@ -11,7 +11,7 @@ N= 1000/d #number of individuals per deme
 
 
 Lst= [[i,j] for i in np.arange(0,d) for j in np.arange(0,d)] #this is a list of all possible deme pairs
-def give_coal_timeGMM_original(m, d, N, a): #then the function for the coalescent time for the general migration model is defined
+def give_coal_timeGMM_original(m): #then the function for the coalescent time for the general migration model is defined
     def M(p):#this is the migration matrix
         M=np.zeros((p,p)) #first we need a matrix (which is "empty" in the sense that it just contains zeros)
         for [i,j] in Lst: #then for each deme pair
