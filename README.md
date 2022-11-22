@@ -11,3 +11,13 @@ First of all, it is good to know that the goal was to compare the performance of
 
 _____________________________________________________________
 How can the code be used?
+Code_msprime and Formula can both be run by themselfes, which means they do not need to access files prepared by the user outside of the code.
+
+In line 6-9 in Code_msprime, the user can decide which values the parameters should have:
+-> d is the number of demes (subpopulations) that the considered population should have
+-> a is the percentage of local migration, which is 2/(d-1) because in the one dimensional, circular Stepping Stone models the demes are arranged in a chain-like order. Therefore each deme has two neihboring demes and with the parameter a, we consider migration that goes to one of them. Apart from that the focal deme should be excluded from this, as individuals that stay in the focal deme do not migrate. Therefore we have d-1 possible demes, to which an individual in the focal deme could migrate. And we want the rate at which it migrates to the two neihboring demes. Therefore we get 2/(d-1)
+-> N is the number of individuals per deme. I chose a total population size of 1000 and in the considered models (General migration model, Island model, Stepping Stone model) each deme contains equally many individuals. Therefore N=1000/d
+
+Apart from that, in line 118 the range of the migration rate m can be chosen, as well as the number of equidistant values that m should take. This will later represent the horizontal axis.
+
+After the parameters are chosen the Code is ready to run and will give you a plot, where the expected mean coalescence time for the three models are shown.
