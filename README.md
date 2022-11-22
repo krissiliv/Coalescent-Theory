@@ -21,4 +21,4 @@ In line 6-9 in Code_msprime and Formula, the user can decide which values the pa
 
 Apart from that, in line 118 (Code_msprime) and line 71 (Formula) the range of the migration rate m can be chosen, as well as the number of equidistant values that m should take. This will later represent the horizontal axis.
 
-After the parameters are chosen the Code is ready to run and will give you a plot, where the expected mean coalescence time for the three models are shown.
+After the parameters are chosen the Code is ready to run and will give you a plot, where the expected mean coalescence times for the three models are shown.
