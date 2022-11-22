@@ -60,9 +60,9 @@ def give_coal_timeGMM_original(m):
     S_1=abs(sum(T_1[i,j]/(d*d) for i in np.arange(0,d) for j in np.arange(0,d)))
     H=np.zeros(d)
     for h in np.arange(d):
-        H[h]=2*d*N+((d-h)*h)/(2*m) #this formula can be found in (Slatkin, 1991)
+        H[h]=2*d*N+((d-h)*h)/(2*m) #this formula can be found in (Slatkin, 1991) https://www.cambridge.org/core/services/aop-cambridge-core/content/view/FCC418CBC6F021B741C83FDE6A0E7558/S0016672300029827a.pdf/inbreeding_coefficients_and_coalescence_times.pdf
     S_2=np.mean(H)
-    S_3=(2*d*N + (d-1)*(d-1)/(2*m*d)) #this formula can be found in (Slatkin, 1991)
+    S_3=(2*d*N + (d-1)*(d-1)/(2*m*d)) #this formula can be found in (Slatkin, 1991) https://www.cambridge.org/core/services/aop-cambridge-core/content/view/FCC418CBC6F021B741C83FDE6A0E7558/S0016672300029827a.pdf/inbreeding_coefficients_and_coalescence_times.pdf
 #    S_w = 2*N #this is the within deme coalescence time of the models (I put it here in case I would like to plot it as well, but it is not plotted below)
 #    S_b = 2*d*N + (d-1)/(2*m) #this is the between deme coalescence time of the models (I put it here in case I would like to plot it as well, but it is not plotted below)
     return [S_1, S_2, S_3] #GMM,STST,IM  #, S_w, S_b]  can also be added - if needed
