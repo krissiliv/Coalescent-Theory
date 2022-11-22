@@ -120,7 +120,7 @@ M_emp = [10**i for i in np.linspace(-10, -0, 10)] #this is the range of the para
 
 means_GMM_original = list()
 for m in M_emp:
-    output = give_coal_timeGMM_original(m=m, d=d, N=N, a=a)  #I evaluate the above defined function with the above defined parameters d,N and a for m in the range defined with M_emp
+    output = give_coal_timeGMM_original(m=m, d=d, N=N, a=a)[0]  #I evaluate the above defined function with the above defined parameters d,N and a for m in the range defined with M_emp
     means_GMM_original.append(output) #and I append all the outputs to the list (which will later be the "y-axis" in the plot)
 
 #Analogeously I get the values for the "vertical axis" for the Island model and the Stepping Stone model function defined above:
