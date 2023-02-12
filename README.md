@@ -7,7 +7,7 @@ The file "Formula" is a representation of this adapted formula together with the
 
 "Code_msprime" works as follows: 
 First of all, it is good to know that the goal was to compare the performance of the formulas for the expected mean coalescence time of the island model, the stepping stone model from before with the results for the expected mean coalescence time of the island model and the one-dimensional, circular stepping stone model according to the population genetics simulator msprime.
-(-> For the first steps with msprime, I used (amongst others): Kelleher, J., & Lohse, K. (2020). Coalescent simulation with msprime. Statistical Population Genomics, 191-230.).
+(-> For the first steps with msprime, I used (amongst others): Kelleher, J., & Lohse, K. (2020). Coalescent simulation with msprime. Statistical Population Genomics, 191-230.)
 Therefore, I included the code for the formulas from the file "Formula" and added a code with msprime, which works as follows: A tuple named tmrca is created which will later contain the time to the mrca of each replicate. The demography of the respective model is created and then msprime is called to simulate num_replicate such coalescent trees with the respective demography. In order to do mimic randomness, it needs a random seed, which I, w.l.o.g., just set to 1. For each of these replicates, each pair of lineages is taken, first within each deme (to get te expected within-deme coalescence time) and then between demes (to get the expected between-deme cosalescence time). Then it returns the averaged mean of all these coalescence times that were obtained. 
 
 
